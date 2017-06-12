@@ -108,7 +108,9 @@ database.ref().on("child_added", function(childSnapshot){
 
 
 // Table Data
-$("#currentTime").text(currentTime);
+$("#currentTime").text(currentTime); //puts current time from moment onto the page
+
+// Append to the page
 $("#trainTable").append(
 		"<tr><td id='nameDisplay'>" + childSnapshot.val().name +
 		"</td><td id='destDisplay'>" + childSnapshot.val().destination +
@@ -119,9 +121,9 @@ $("#trainTable").append(
 
 },
 
-// errorObject
+// ErrorObject
 function errorObject () {
-    console.log("Read failed: " + errorObject.code)
+    console.log("Read failed: " + errorObject.code)  //Why do we need this? Make sure to ask.
 
 });
 
